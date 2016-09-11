@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="asal">
+        <item> Malang </item>
+        <item> Blitar</item>
+        <item> Tulungagung</item>
+        <item> Surabaya</item>
+        <item> Madiun</item>
+        <item> Tuban </item>
+        <item> Jombang</item>
+        <item> Situbondo</item>
+        <item> Probolinggo</item>
+        <item> Pasuruan </item>
+    </string-array>
+</resources>
