@@ -42,6 +42,7 @@
             android:layout_gravity="center_horizontal"
             android:src="@drawable/logo2"/>
 
+
         <TextView
             android:id="@+id/textView3"
             android:layout_width="wrap_content"
@@ -61,6 +62,23 @@
 
         <EditText
             android:id="@+id/editTextTahun"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+
+        <TextView
+            android:id="@+id/textView6"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Asal Wilayah"/>
+
+        <Spinner
+            android:id="@+id/spinnerProvinsi"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:entries="@array/provinsi"/>
+
+        <Spinner
+            android:id="@+id/spinnerKota"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"/>
 
@@ -91,17 +109,6 @@
         </RadioGroup>
 
         <TextView
-            android:id="@+id/textView6"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Asal Wilayah"/>
-
-        <Spinner
-            android:id="@+id/spinnerAsal"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"/>
-
-        <TextView
             android:id="@+id/textView7"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -128,12 +135,6 @@
             android:checked="false"
             android:text="Futsal"/>
 
-        <Button
-            android:id="@+id/buttonOK"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Daftar"/>
-
         <CheckBox
             android:id="@+id/checkBoxPS"
             android:layout_width="wrap_content"
@@ -141,10 +142,34 @@
             android:checked="false"
             android:text="Paduan Suara"/>
 
+        <Button
+            android:id="@+id/buttonOK"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Daftar"/>
+
         <TextView
             android:id="@+id/textViewHasil"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Hasil"/>
+            tools:text="Hasil"/>
+
+        <TextView
+            android:id="@+id/textViewHasil2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            tools:text="Hasil"/>
+
+        <TextView
+            android:id="@+id/textViewHasil3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            tools:text="Hasil"/>
+
+        <TextView
+            android:id="@+id/textViewHasil4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            tools:text="Hasil"/>
     </LinearLayout>
 </ScrollView>
