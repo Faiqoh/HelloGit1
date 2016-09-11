@@ -9,6 +9,7 @@ import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.CompoundButton;
 import android.widget.EditText;
+import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.Spinner;
 import android.widget.TextView;
@@ -85,7 +86,7 @@ public class MainActivity extends AppCompatActivity implements CompoundButton.On
             String nama = etNama.getText().toString();
             String tahun = etTahun.getText().toString();
             String hasil = null;
-            String hasil2 = "Ekskul yang Anda pilih :";
+            String hasil2 = "Ekskul yang dipilih :";
             int startlen = hasil2.length();
 
             if (nama.isEmpty()) {
@@ -103,13 +104,33 @@ public class MainActivity extends AppCompatActivity implements CompoundButton.On
             } else {
                   etTahun.setError(null);
             }
-            tvHasil.setText("Nama                :" + nama + "\nTahun lahir       :" + tahun);
-            tvHasil2.setText("Asal                   :" + " Kota " + spKota.getSelectedItem().toString() + ","
+            tvHasil.setText("Nama                       :" + nama + "\nTahun lahir              :" + tahun);
+            tvHasil2.setText("Asal                          :" + "Kota " + spKota.getSelectedItem().toString() + ", "
                     + spProvinsi.getSelectedItem().toString());
+
+            if (rgJk.getCheckedRadioButtonId() != -1) {
+                  RadioButton rb = (RadioButton)
+                          findViewById(rgJk.getCheckedRadioButtonId());
+                  hasil = rb.getText().toString();
+            }
+            if (hasil == null) {
+                  tvHasil3.setText("Jenis Kelamin           :");
+            } else {
+                  tvHasil3.setText("Jenis Kelamin         :" + hasil);
+            }
+
+            if (cbV.isChecked()) hasil2 += cbV.getText() + ", ";
+            if (cbB.isChecked()) hasil2 += cbB.getText() + ", ";
+            if (cbF.isChecked()) hasil2 += cbF.getText() + ", ";
+            if (cbPS.isChecked()) hasil2 += cbPS.getText() + ".";
+
+            if (hasil2.length() == startlen) hasil2 += "Tidak ada pada pilihan";
+            tvHasil4.setText(hasil2);
       }
 
       @Override
       public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
-
+            if (isChecked) nEkskul += 1;
+            else nEkskul -= 1;
       }
 }
