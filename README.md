@@ -14,7 +14,7 @@ B. ScreenShot
 <br>
 C. File APK
 
-(https://drive.google.com/drive/u/1/my-drive)
+(https://drive.google.com/open?id=0B5EeZPMXc7uQck81em40dms0d0E)
 
 <br>
 D. Identitas
