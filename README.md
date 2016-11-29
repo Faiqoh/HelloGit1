@@ -17,11 +17,10 @@ DETEKSI KESALAHAN
  - Apabila user menginputkan nama kurang dari 3 huruf maka akan muncul sebuah pemberitahuan bahwa nama harus lebih dari 3 huruf dan kemudian diarahkan ke edit text isian nama
  - Apabila user tidak menginputkan tahun lahir maka akan muncul pemberitahuan dan mengarah pada edit text isian tahun lahir
  - Apabila user menginputkan tahun bukan dengan format yyyy (misal 2000) maka hakan muncul sebuah pemberitahuan bahwa user harus menginputkan tahun kelahiran dengan format yyyy atau 4 digit angka dan kemudian diarahkan ke edit text isian nama
- - Apabila user belum memilih hobi maka text view yang muncul adalah Pilih kelas Anda dan jika sudah memilih kelas maka berubah menjadi Kelas (jumlah kelas yang terpilih)
+ - Apabila user belum memilih ekskul maka text view yang muncul adalah Pilih ekskul Anda dan jika sudah memilih hobi maka berubah menjadi ekskul (jumlah ekskul yang terpilih)
  - Apablia user belum memilih jenis kelamin maka pada text view hasil yang terletak di bawah button akan muncul pemberitahuan bahwa harus menginputkan jenis kelamin 
  
 <br>
-
 
 <br>
 ### B. ScreenShot
