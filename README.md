@@ -25,15 +25,17 @@ DETEKSI KESALAHAN
 <br>
 ### B. ScreenShot
 
-![1.jpg](https://s16.postimg.org/odtoi0u11/image.jpg)
-![2.jpg](https://s22.postimg.org/dtagx81cx/image.jpg)
-![3.jpg](https://s15.postimg.org/j5dg9bmff/image.jpg)
-![4.jpg](https://s9.postimg.org/ydjt4abfz/image.jpg)
+![1.jpg](https://s22.postimg.org/bu0v7n2oh/image.jpg)
+![2.jpg](https://s16.postimg.org/gld81kh8l/image.jpg)
+![3.jpg](https://s12.postimg.org/4mfq9agkd/image.jpg)
+![4.jpg](https://s22.postimg.org/56hss7n29/image.jpg)
+![5.jpg](https://s11.postimg.org/lepzmqd4z/image.jpg)
+![6.jpg](https://s15.postimg.org/iqsle67jv/image.jpg)
 
 <br>
 ### C. File APK
 
-(https://drive.google.com/open?id=0B5EeZPMXc7uQck81em40dms0d0E)
+(https://drive.google.com/open?id=0B5EeZPMXc7uQR2dVYzhlOV96Unc)
 
 <br>
 ### D. Identitas
