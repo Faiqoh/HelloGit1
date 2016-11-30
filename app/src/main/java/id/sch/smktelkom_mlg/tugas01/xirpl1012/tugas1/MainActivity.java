@@ -17,6 +17,8 @@ import android.widget.TextView;
 import java.util.ArrayList;
 import java.util.Arrays;
 
+import static id.sch.smktelkom_mlg.tugas01.xirpl1012.tugas1.R.id.rgJK;
+
 public class MainActivity extends AppCompatActivity implements CompoundButton.OnCheckedChangeListener {
 
       EditText etNama, etTahun;
@@ -39,7 +41,7 @@ public class MainActivity extends AppCompatActivity implements CompoundButton.On
 
             etNama = (EditText) findViewById(R.id.editTextNama);
             etTahun = (EditText) findViewById(R.id.editTextTahun);
-            rgJk = (RadioGroup) findViewById(R.id.radioGroupJK);
+            rgJk = (RadioGroup) findViewById(rgJK);
             spProvinsi = (Spinner) findViewById(R.id.spinnerProvinsi);
             spKota = (Spinner) findViewById(R.id.spinnerKota);
             cbV = (CheckBox) findViewById(R.id.checkBoxV);
@@ -83,49 +85,66 @@ public class MainActivity extends AppCompatActivity implements CompoundButton.On
       }
 
       private void doClick() {
+            if (isValid()) {
+                  String nama = etNama.getText().toString();
+                  String tahun = etTahun.getText().toString();
+                  String hasil = null;
+                  String hasil2 = "Ekskul yang dipilih :";
+                  int startlen = hasil2.length();
+
+                  tvHasil.setText("Nama                       :" + nama + "\nTahun lahir              :" + tahun);
+                  tvHasil2.setText("Asal                          :" + "Kota " + spKota.getSelectedItem().toString() + ", "
+                          + spProvinsi.getSelectedItem().toString());
+                  if (rgJk.getCheckedRadioButtonId() != -1) {
+                        RadioButton rb = (RadioButton)
+                                findViewById(rgJk.getCheckedRadioButtonId());
+                        hasil = rb.getText().toString();
+                  }
+                  if (hasil == null) {
+                        tvHasil3.setText("Jenis Kelamin          :Anda belum memilih jenis kelamin");
+                  } else {
+                        tvHasil3.setText("Jenis Kelamin         :" + hasil);
+                  }
+
+                  if (cbV.isChecked()) hasil2 += cbV.getText() + ", ";
+                  if (cbB.isChecked()) hasil2 += cbB.getText() + ", ";
+                  if (cbF.isChecked()) hasil2 += cbF.getText() + ", ";
+                  if (cbPS.isChecked()) hasil2 += cbPS.getText() + ".";
+
+                  if (hasil2.length() == startlen) hasil2 += "Tidak ada pada pilihan";
+                  tvHasil4.setText(hasil2);
+            }
+      }
+
+      private boolean isValid() {
+            boolean valid = true;
             String nama = etNama.getText().toString();
             String tahun = etTahun.getText().toString();
-            String hasil = null;
-            String hasil2 = "Ekskul yang dipilih :";
-            int startlen = hasil2.length();
+            TextView jk = (TextView) findViewById(R.id.textView5);
+            TextView eks = (TextView) findViewById(R.id.textView7);
 
             if (nama.isEmpty()) {
-                  etNama.setError("Nama belum diisi");
-            } else if (nama.length() < 3) {
-                  etNama.setError("Minimal 3 karakter");
-            } else {
-                  etNama.setError(null);
+                  etNama.setError("Nama Belum diisi");
+                  valid = false;
             }
-
             if (tahun.isEmpty()) {
-                  etTahun.setError("Tahun lahir belum diisi");
-            } else if (tahun.length() != 4) {
-                  etTahun.setError("Format tahun lahir salah");
+                  etTahun.setError("Tahun Belum diisi");
+                  valid = false;
+            }
+            if (rgJk.getCheckedRadioButtonId() <= 0) {
+                  jk.setError("Belum memilih jenis kelamin");
+                  valid = false;
             } else {
-                  etTahun.setError(null);
+                  jk.setError(null);
             }
-            tvHasil.setText("Nama                       :" + nama + "\nTahun lahir              :" + tahun);
-            tvHasil2.setText("Asal                          :" + "Kota " + spKota.getSelectedItem().toString() + ", "
-                    + spProvinsi.getSelectedItem().toString());
-
-            if (rgJk.getCheckedRadioButtonId() != -1) {
-                  RadioButton rb = (RadioButton)
-                          findViewById(rgJk.getCheckedRadioButtonId());
-                  hasil = rb.getText().toString();
-            }
-            if (hasil == null) {
-                  tvHasil3.setText("Jenis Kelamin           :");
+            if (cbB.isChecked() || cbF.isChecked() || cbPS.isChecked() || cbV.isChecked()) {
+                  valid = true;
+                  eks.setError(null);
             } else {
-                  tvHasil3.setText("Jenis Kelamin         :" + hasil);
+                  eks.setError("Belum memilih kelas");
+                  valid = false;
             }
-
-            if (cbV.isChecked()) hasil2 += cbV.getText() + ", ";
-            if (cbB.isChecked()) hasil2 += cbB.getText() + ", ";
-            if (cbF.isChecked()) hasil2 += cbF.getText() + ", ";
-            if (cbPS.isChecked()) hasil2 += cbPS.getText() + ".";
-
-            if (hasil2.length() == startlen) hasil2 += "Tidak ada pada pilihan";
-            tvHasil4.setText(hasil2);
+            return valid;
       }
 
       @Override

@@ -89,7 +89,7 @@
             android:text="Jenis Kelamin"/>
 
         <RadioGroup
-            android:id="@+id/radioGroupJK"
+            android:id="@+id/rgJK"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content">
 
